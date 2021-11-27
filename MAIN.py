@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from keras.models import *
 from keras.layers import *
-from keras.utils import plot_model
+from keras.utils.vis_utils import plot_model
 from IPython.display import SVG
 from tensorflow.python.framework import ops
 import scipy.io
