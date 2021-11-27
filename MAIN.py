@@ -152,7 +152,7 @@ def RGBZoom(X):
     return X
 
     
-def Hxfunction(x,largo,ancho,profun,H):
+def Hxfunction2(x,largo,ancho,profun,H):
     Aux = tf.reshape(x,(largo,ancho,profun))
     Aux = tf.transpose(Aux,perm=[2,1,0])
     Aux = tf.reshape(Aux,(largo*ancho*profun,1))
