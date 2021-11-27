@@ -103,7 +103,7 @@ def addGaussianNoise(y,SNR):
     return y+noise_y
 
 def RGBZoom(X):
-    rerturn X
+    return X
     w = 6
     y = [6, 100+6]
     x = [6, 100+6]
