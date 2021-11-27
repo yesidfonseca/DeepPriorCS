@@ -250,8 +250,8 @@ def UNetL(pretrained_weights = None,input_size = (256,256,1), L=10, H=0, fact = 
     L_3 = 3*L;
     L_4 = 4*L;
     
-    inputs = Input(input_size)  
-    inicial = XoLayer(largo=input_size[0], ancho=input_size[1], profun=L, fact=fact)(inputs)
+    startLayer = Input(input_size)  
+    inicial = XoLayer(largo=input_size[0], ancho=input_size[1], profun=L, fact=fact)(startLayer)
     
     conv1 = Dropout(0.2)(inicial)
     conv1 = Conv2D(L, 3, activation='relu', padding='same', kernel_initializer='he_normal')(conv1)
@@ -288,7 +288,7 @@ def UNetL(pretrained_weights = None,input_size = (256,256,1), L=10, H=0, fact = 
     
     final =Lambda(lambda x: Hxfunction(x,largo=input_size[0],ancho=input_size[1],profun=L,H=H)) (conv8)
 
-    model = Model(input=inputs, output=final)
+    model = Model(input=startLayer, output=final)
 
     if (pretrained_weights):
         model.load_weights(pretrained_weights)
