@@ -8,7 +8,6 @@ import numpy as np
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-from tensorflow import keras 
 from keras.models import *
 from keras.layers import *
 from keras.utils.vis_utils import plot_model
