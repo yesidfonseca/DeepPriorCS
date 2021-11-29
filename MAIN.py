@@ -376,5 +376,5 @@ class myCallback(tf.keras.callbacks.Callback):
 
             self.model.layers[2].rate=0.5
             
-            VisualGraphs(result,self.Best,xo,self.my_PSNR,img,[0,1,2])#[8,4,2])
+            VisualGraphs(result,self.Best,xo,self.my_PSNR,img,[8,4,2])
            
