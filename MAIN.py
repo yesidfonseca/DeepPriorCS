@@ -333,12 +333,13 @@ from keras import backend as K
 class myCallback(tf.keras.callbacks.Callback):
      
 
-    def __init__(self,Xorig=0,Freq=0):
+    def __init__(self,Xorig=0,Freq=0,ColorBands = 0):
         super(myCallback, self).__init__()
         self.my_PSNR = []
         self.Xorig = Xorig;
         self.Best = np.zeros(shape=Xorig.shape);
         self.Freq = Freq
+        self.ColorBands = ColorBands
         
 
     def on_epoch_end(self, epoch, logs={}):
@@ -376,5 +377,5 @@ class myCallback(tf.keras.callbacks.Callback):
 
             self.model.layers[2].rate=0.5
             
-            VisualGraphs(result,self.Best,xo,self.my_PSNR,img,[8,4,2])
+            VisualGraphs(result,self.Best,xo,self.my_PSNR,img,self.ColorBands)
            
